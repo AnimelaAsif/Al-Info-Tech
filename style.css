@@ -125,6 +125,9 @@ html, body{
 .fa-youtube:hover {
   color: #d5d5d5;
 }
+.social a:hover img {
+  opacity: 0.5; /* You can adjust the opacity value as needed */
+}
 footer {
   background-color: #3f3f3f;
   color: #d5d5d5;
