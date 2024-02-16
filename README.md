@@ -8,4 +8,4 @@ copy and paste index.html code in VS Code or NOTE PAD ++ and save it as index.ht
 copy and paste style.css code in VS Code or NOTE PAD ++ and save it as style.css
 
 
------WILL POST SHOPPING WEBSITE WITH ADD TO CART OPTION AND FULLY FUNCTIONABLE----
+-----WILL POST SHOPPING WEBSITE WITH ADD TO CART OPTION AND FULLY FUNCTIONAL----
