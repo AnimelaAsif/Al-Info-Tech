@@ -118,6 +118,7 @@
             var formData = new FormData(form);
             var encodedData = new URLSearchParams(formData).toString();
             xhr.send(encodedData);
+            return false;
         }
     </script>
 
