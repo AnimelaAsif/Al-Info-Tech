@@ -68,7 +68,7 @@
 
 <div class="container">
     <h2>Book Your Umrah Package</h2>
-    <form action="https://script.google.com/macros/s/AKfycbyXRfkuWZ39MchmxRxwm8P6tmPF9bBghVzJsTtkCNOcO1GBQec72jvmZly_QPyKlTzG/exec" method="post" target="_blank">
+    <form action="https://script.google.com/macros/s/AKfycbyXRfkuWZ39MchmxRxwm8P6tmPF9bBghVzJsTtkCNOcO1GBQec72jvmZly_QPyKlTzG/exec" method="post">
         <label for="name">Full Name:</label>
         <input type="text" id="name" name="name" required>
 
@@ -102,6 +102,27 @@
 
         <input type="submit" value="Book Now">
     </form>
+    
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            var form = document.getElementById("bookingForm");
+            var xhr = new XMLHttpRequest();
+            xhr.open(form.method, form.action);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                    form.reset();
+                    alert("Form submitted successfully!");
+                }
+            };
+            var formData = new FormData(form);
+            var encodedData = new URLSearchParams(formData).toString();
+            xhr.send(encodedData);
+        }
+    </script>
+    
+
 </div>
 
 </body>
