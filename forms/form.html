@@ -113,7 +113,6 @@
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                     form.reset();
-                    alert("Form submitted successfully!");
                 }
             };
             var formData = new FormData(form);
@@ -121,7 +120,6 @@
             xhr.send(encodedData);
         }
     </script>
-    
 
 </div>
 
