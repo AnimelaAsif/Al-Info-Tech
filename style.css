@@ -258,6 +258,6 @@ hr.light-100 {
 .carousel-item img {
   display: block;
   margin: 0 auto;
-  max-width: 80%;
+  max-width: 75%;
   max-height: 1100px;
 }
