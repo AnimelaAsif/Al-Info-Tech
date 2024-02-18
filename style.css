@@ -43,7 +43,7 @@ html, body{
 }
 .carousel-caption h1 {
   font-size: 500%;
-  text-transform: uppercase;
+  font-weight: bold;
   text-shadow: 1px 1px 10px #000;
 }
 .carousel-caption h3 {
@@ -126,7 +126,7 @@ html, body{
   color: #d5d5d5;
 }
 .social a:hover img {
-  opacity: 0.5; /* You can adjust the opacity value as needed */
+  opacity: 0.5; 
 }
 footer {
   background-color: #3f3f3f;
@@ -234,9 +234,6 @@ hr.light-100 {
   }
 }
 
-
-
-/*---Firefox Bug Fix --*/
 .carousel-item {
   transition: -webkit-transform 0.5s ease;
   transition: transform 0.5s ease;
@@ -246,14 +243,9 @@ hr.light-100 {
   text-align: center;
 }
 
-/*--- Bootstrap Padding Fix --*/
 [class*="col-"] {
     padding: 1rem;
 }
-
-/* .carousel-item {
-  text-align: center;
-} */
 
 .carousel-item img {
   display: block;
