@@ -42,8 +42,8 @@ html, body{
   transform: translateY(-50%);
 }
 .carousel-caption h1 {
-  font-size: 500%;
-  font-weight: bold;
+  /* font-size: 500%; */
+  /* font-weight: bold; */
   text-shadow: 1px 1px 10px #000;
 }
 .carousel-caption h3 {
