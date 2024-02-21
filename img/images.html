@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photo Gallery</title>
+    <title>Gallery</title>
+    <link rel="icon" href="logo.png" type="image/jpg">
+		<link rel="stylesheet" href="css/aos.css" />
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,12 +13,24 @@
             padding: 0;
             background-color: #f0f0f0;
         }
+        .header {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .header img {
+            max-width: 100%;
+            height: auto;
+        }
         .container {
             max-width: 800px;
             margin: 20px auto;
             padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
         .photo {
+            width: calc(50% - 10px);
             margin-bottom: 20px;
         }
         .photo img {
@@ -29,18 +43,53 @@
 </head>
 <body>
 
+<div class="header">
+    <p style="font-size: 32px;">Gallery</p>
+</div>
+
 <div class="container">
     <div class="photo">
         <img src="mecca.jpg" alt="Photo 1">
     </div>
     <div class="photo">
-        <img src="madinah.jpg" alt="Photo 2">
+        <img src="bangkok.jpg" alt="Photo 2">
     </div>
     <div class="photo">
         <img src="dubai.jpg" alt="Photo 3">
     </div>
     <div class="photo">
         <img src="singapore.jpg" alt="Photo 3">
+    </div>
+    <div class="photo">
+        <img src="umrah.jpg" alt="Photo 1">
+    </div>
+</div>
+
+<div class="header">
+    <p style="font-size: 32px;">Catering Menu</p>
+</div>
+
+<div class="container">
+    <div class="photo">
+        <img src="monday.jpg" alt="monday">
+    </div>
+    <div class="photo">
+        <img src="tuesday.jpg" alt="tuesday">
+    </div>
+    <div class="photo">
+        <img src="wednesday.jpg" alt="wednesday">
+    </div>
+    <div class="photo">
+        <img src="thursday.jpg" alt="thursday">
+    </div>
+    <div class="photo">
+        <img src="friday.jpg" alt="friday">
+    </div>
+    <div class="photo">
+        <img src="saturday.jpg" alt="saturday">
+    </div>
+    <div class="photo">
+        <img src="sunday.jpg" alt="sunday">
     </div>
 </div>
 
