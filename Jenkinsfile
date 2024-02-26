@@ -2,6 +2,14 @@ pipeline {
     agent any
 
     stages {
+        stage('Checkout') {
+            steps {
+                // Checkout code from Git repository using credentials
+                withCredentials([usernamePassword(credentialsId: 'your-credentials-id', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+                    git credentialsId: 'My_Credentials', url: 'https://github.com/animelaasif/Al-Info-Tech.git', username: GIT_USERNAME, password: GIT_PASSWORD
+                }
+            }
+        }
         stage('Terminate EC2 Instances') {
             steps {
                 script {
