@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Booking Form</title>
+    <link rel="icon" href="logo.png" type="image/jpg">
+		<link rel="stylesheet" href="css/aos.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('form-background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        input[type="submit"] {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Book Your Package</h2>
+    <form id="form" action="https://script.google.com/macros/s/AKfycbw2pBBPTYhY5hjuZApa7cXH_qCY07vSCgi1Q4r6oUWSYJbI3x91J7XBCRT1vkMsA1sK/exec" method="post" onsubmit="return submitForm(event)">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" required>
+
+        <label for="Package-type">Package Type:</label>
+        <select id="Package-type" name="Package-type" required>
+            <option value="--None--">--None--</option>
+            <option value="Umrah Package">Umrah Package</option>
+            <option value="Dubai Package">Dubai Package</option>
+            <option value="Singapore Package">Singapore Package</option>
+	    <option value="Visa">Visa Service</option>
+        </select>
+
+        <label for="departure">Departure Date:</label>
+        <input type="date" id="departure" name="departure" required>
+
+        <label for="return">Return Date:</label>
+        <input type="date" id="return" name="return">
+
+        <label for="adults">Number of Adults:</label>
+        <input type="number" id="adults" name="adults" min="1" required>
+
+        <label for="children">Number of Children:</label>
+        <input type="number" id="children" name="children" min="0">
+
+        <label for="message">Additional Requests:</label>
+        <textarea id="message" name="message"></textarea>
+
+        <input type="submit" value="Book Now">
+    </form>
+    
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            var form = document.getElementById("form");
+            var xhr = new XMLHttpRequest();
+            xhr.open(form.method, form.action);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                    form.reset();
+                    window.location.reload();
+                }
+            };
+            var formData = new FormData(form);
+            var encodedData = new URLSearchParams(formData).toString();
+            xhr.send(encodedData);
+            return false;
+        }
+    </script>
+
+</div>
+
+</body>
+</html>
