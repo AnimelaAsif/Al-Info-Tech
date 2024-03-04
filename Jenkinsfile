@@ -20,7 +20,7 @@ pipeline {
                     instanceIds.each { instanceId ->
                         sh "aws ec2 terminate-instances --instance-ids $instanceId --region $awsRegion"
                         echo "Instance $instanceId terminated."
-                        echo "Waiting for 5 minutes before terminating the next instance."
+                        echo "Waiting for 3 minutes before terminating the next instance."
                         sleep time: 180, unit: 'SECONDS'
                     }
                 }
