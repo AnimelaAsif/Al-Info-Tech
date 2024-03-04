@@ -200,7 +200,6 @@
 	<hr class="my-4">
 </div>
 
-<!--- Connect -->
 <div class="container-fluid padding">
 	<div class="row text-center padding">
 		<div class="col-12">
@@ -217,7 +216,6 @@
 	</div>
 </div>
 
-<!--- Footer -->
 <footer id="footer">
 	<div class="container-fluid padding">
 		<div class="row text-center">
@@ -270,8 +268,17 @@
 			</div>
 			<div class="col-12">
 				<hr class="light-100">
-				<a target="_blank"; href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSDXmSzJmvVkfnpxfBdHpqwBQWTcdbTRjvwLrjkpTmWQzjhtJNCvmcVncmjTcdshDmZZKklb"><h5>&copy; Mohammed Asif </h5></a>
-			</div>
+				<a href="#" onclick="sendEmail()"><h5>&copy; Mohammed Asif </h5></a>
+				<script>
+					function sendEmail(){
+						var email = "animelaasif@gmail.com";
+						var subject = "Al-Info-Tech";
+						var body = "Hello";
+						var mailtoLink = "mailto:" + email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+						window.open(mailtoLink, '_blank');
+					}
+				</script>
+			</div>	
 		</div>
 	</div>
 </footer>
