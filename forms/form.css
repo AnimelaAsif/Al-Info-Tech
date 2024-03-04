@@ -228,17 +228,13 @@ html {
   color: red;
 }
 
-
-
-
-/* Text Box Container Styles */
 .login-box .text-box-container {
   position: relative;
-  margin-top: 20px; /* Adjust margin as needed */
+  margin-top: 20px;
 }
 
 .login-box .text-box-container input[type="text"] {
-  width: calc(50% - 10px); /* Adjusted width to accommodate the label */
+  width: calc(50% - 10px);
   padding: 10px;
   font-size: 16px;
   color: #fff;
@@ -246,7 +242,7 @@ html {
   border-bottom: 1px solid #fff;
   outline: none;
   background: transparent;
-  box-sizing: border-box; /* Include padding and border in width calculation */
+  box-sizing: border-box;
 }
 
 .login-box .text-box-container label {
@@ -260,7 +256,6 @@ html {
   transition: .5s;
 }
 
-/* Styling the label when input is focused or has value */
 .login-box .text-box-container input[type="text"]:focus + label,
 .login-box .text-box-container input[type="text"]:valid + label {
   top: -20px;
