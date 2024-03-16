@@ -1,17 +1,19 @@
 pipeline {
     agent any
     stages {
-        stage('git checkout') {
+        stage('check the list of images') {
             steps {
-                git branch: 'main',credentialsId: 'My_Credentials', url: 'https://github.com/animelaasif/Al-Info-Tech.git'
-            
                 dir('/var/lib/jenkins/workspace/Al-info/img/') {
                     sh "sh image-list.sh"
                     sh "sh image-write.sh"
                 }
+            }
+        }
+        stage('push the latest changes to git') {
+            steps {
                 sh "git add ."
                 sh "git commit -m 'added the latest images'"
-                sh "git push https://github.com/animelaasif/Al-Info-Tech.git"
+                sh "git push"
             }
         }
         stage('Store Running Instance IDs') {
