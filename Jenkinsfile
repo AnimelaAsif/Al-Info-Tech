@@ -11,12 +11,14 @@ pipeline {
         }
         stage('push the latest changes to git') {
             steps {
-                    // git credentialsId: 'My_Credentials', url: 'https://github.com/AnimelaAsif/Al-Info-Tech.git'
-                    sh "git add ."
-                    sh "git commit -m 'added the latest images'"
-                    sh "git push origin master"
-            } 
+                sh "git config --global user.email 'animelaasif@gmail.com'"
+                sh "git config --global user.name 'animelaasif'"
+                sh "git add ."
+                sh "git commit -m 'added the latest images'"
+                sh "git push origin master"
+            }
         }
+
         stage('Store Running Instance IDs') {
             steps {
                 script {
