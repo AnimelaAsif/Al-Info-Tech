@@ -15,7 +15,7 @@ pipeline {
                 sh "git config --global user.name 'animelaasif'"
                 sh "git add ."
                 sh "git commit -m 'added the latest images'"
-                sh "git push origin master"
+                sh "git push https://github.com/AnimelaAsif/Al-Info-Tech.git main"
             }
         }
 
