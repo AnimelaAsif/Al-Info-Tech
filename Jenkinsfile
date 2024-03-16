@@ -11,7 +11,7 @@ pipeline {
         }
         stage('push the latest changes to git') {
             steps {
-                    git credentialsId: 'My_Credentials', url: 'https://github.com/AnimelaAsif/Al-Info-Tech.git'
+                    // git credentialsId: 'My_Credentials', url: 'https://github.com/AnimelaAsif/Al-Info-Tech.git'
                     sh "git add "
                     sh "git commit -m 'added the latest images'"
                     sh "git push origin master"
