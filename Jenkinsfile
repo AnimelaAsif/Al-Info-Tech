@@ -1,6 +1,25 @@
 pipeline {
     agent any
     stages {
+        stage('check the list of images') {
+            steps {
+                dir('/var/www/html/img/') {
+                    sh "sh image-list.sh"
+                    sh "sh image-write.sh"
+                }
+            }
+        }
+        stage('push the latest changes to git') {
+            steps {
+                dir('/var/www/html/img/'){
+                    git credentialsId: 'My_Credentials', url: 'https://github.com/AnimelaAsif/Al-Info-Tech.git'
+                    sh "git add ."
+                    sh "git commit -m 'added the latest images'"
+                    sh "git push origin master"
+                }
+            }
+            
+        }
         stage('Store Running Instance IDs') {
             steps {
                 script {
