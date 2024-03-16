@@ -7,7 +7,7 @@ pipeline {
                 //     sh "sh image-list.sh"
                 //     sh "sh image-write.sh"
                 // }
-                sh "pwd"
+                sh "ls /var/lib/jenkins/workspace/Al-info/"
             }
         }
         // stage('push the latest changes to git') {
