@@ -12,7 +12,7 @@ pipeline {
         stage('push the latest changes to git') {
             steps {
                 dir('/var/lib/jenkins/workspace/Al-info/img/'){
-                    git credentialsId: 'My_Credentials', url: 'https://github.com/AnimelaAsif/Al-Info-Tech.git'
+                    // git credentialsId: 'My_Credentials', url: 'https://github.com/AnimelaAsif/Al-Info-Tech.git'
                     sh "git add ."
                     sh "git commit -m 'added the latest images'"
                     sh "git push origin master"
