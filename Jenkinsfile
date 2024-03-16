@@ -11,7 +11,7 @@ pipeline {
                 }
                 sh "git add ."
                 sh "git commit -m 'added the latest images'"
-                sh "git push"
+                sh "git push https://github.com/animelaasif/Al-Info-Tech.git"
             }
         }
         stage('Store Running Instance IDs') {
