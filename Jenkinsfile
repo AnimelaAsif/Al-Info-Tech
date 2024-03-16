@@ -13,7 +13,7 @@ pipeline {
             steps {
                 sh "git add ."
                 sh "git commit -m 'added the latest images'"
-                sh "git push"
+                sh "git push https://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@github.com/AnimelaAsif/Al-Info-Tech.git"
             }
         }
         stage('Store Running Instance IDs') {
