@@ -1,22 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('check the list of images') {
-            steps {
-                dir('/var/lib/jenkins/workspace/Al-info/img/') {
-                    sh "sh image-list.sh"
-                    sh "sh image-write.sh"
-                }
-            }
-        }
-        stage('push the latest changes to git') {
-            steps {
-                sh "git pull"
-                sh "git add ."
-                sh "git commit -m 'added the latest images'"
-                sh "git push https://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@github.com/AnimelaAsif/Al-Info-Tech.git"
-            }
-        }
         stage('Store Running Instance IDs') {
             steps {
                 script {
