@@ -5,16 +5,12 @@ pipeline {
             steps {
                 git branch: 'main',credentialsId: 'My_Credentials', url: 'https://github.com/animelaasif/Al-Info-Tech.git'
             }
-        }
-        stage('check the list of images') {
             steps {
                 dir('/var/lib/jenkins/workspace/Al-info/img/') {
                     sh "sh image-list.sh"
                     sh "sh image-write.sh"
                 }
             }
-        }
-        stage('push the latest changes to git') {
             steps {
                 sh "git add ."
                 sh "git commit -m 'added the latest images'"
