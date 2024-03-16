@@ -1,9 +1,17 @@
 pipeline {
     agent any
+    environment {
+        GIT_CREDENTIALS = 'My_Credentials'
+    }
     stages {
+        stage('git clone') {
+            steps {
+                git credentialsId: env.GIT_CREDENTIALS, url: 'https://github.com/AnimelaAsif/Al-Info-Tech.git'
+            }
+        }
         stage('check the list of images') {
             steps {
-                dir('/var/lib/jenkins/workspace/Al-info/img/') {
+                dir('/var/lib/jenkins/workspace/Al-info/Al-Info-Tech/img/') {
                     sh "sh image-list.sh"
                     sh "sh image-write.sh"
                 }
@@ -11,11 +19,9 @@ pipeline {
         }
         stage('push the latest changes to git') {
             steps {
-                sh "git config --global user.email 'animelaasif@gmail.com'"
-                sh "git config --global user.name 'animelaasif'"
                 sh "git add ."
                 sh "git commit -m 'added the latest images'"
-                sh "git push https://github.com/AnimelaAsif/Al-Info-Tech.git main"
+                sh "git push origin master"
             }
         }
 
