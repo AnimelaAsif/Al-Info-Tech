@@ -1,6 +1,11 @@
 pipeline {
     agent any
     stages {
+        stage('git checkout') {
+            steps {
+                git branch: 'main',credentialsId: 'My_Credentials', url: 'https://github.com/animelaasif/Al-Info-Tech.git'
+            }
+        }
         stage('check the list of images') {
             steps {
                 dir('/var/lib/jenkins/workspace/Al-info/img/') {
@@ -16,7 +21,6 @@ pipeline {
                 sh "git push"
             }
         }
-
         stage('Store Running Instance IDs') {
             steps {
                 script {
