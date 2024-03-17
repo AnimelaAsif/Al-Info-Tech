@@ -11,11 +11,14 @@ pipeline {
         }
         stage('Push Changes') {
             steps {
-                script {
-                    sh "git add ."
-                    sh "git commit -m 'Add new image'"
-                    git Push(branch: 'main', credentialsId: 'My_Credentials', force: true, url: 'https://github.com/animelaasif/Al-Info-Tech.git')
+                dir('/var/lib/jenkins/workspace/Al-info/img') {
+                    script {
+                        sh "git add ."
+                        sh "git commit -m 'Add new image'"
+                        sh "git Push(branch: 'main', credentialsId: 'My_Credentials', force: true, url: 'https://github.com/animelaasif/Al-Info-Tech.git')"
+                    }
                 }
+                
             }
         }
         stage('Store Running Instance IDs') {
