@@ -3,15 +3,17 @@ pipeline {
     stages {
         stage('Run the scripts'){
             steps{
-                script {
-                    sh "sh image-list.sh"
-                    sh "sh image-write.sh"
+                dir('/var/lib/jenkins/workspace/Al-info/img/') {
+                    script {
+                        sh "sh image-list.sh"
+                        sh "sh image-write.sh"
+                    }
                 }
             }
         }
         stage('Push Changes') {
             steps {
-                dir('/var/lib/jenkins/workspace/Al-info/img') {
+                dir('/var/lib/jenkins/workspace/Al-info/img/') {
                     script {
                         sh "git add ."
                         sh "git commit -m 'Add new image'"
