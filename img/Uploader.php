@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["Upload"])) {
         shell_exec("git add $fileName");
         shell_exec("git commit -m 'Uploaded $fileName'");
         shell_exec("git push https://animelaasif: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@github.com/animelaasif/Al-Info-Tech.git");
-        echo "File uploaded successfully and pushed to GitHub.";
+        echo "File uploaded successfully.";
     } else {
         echo "Error uploading file.";
     }
