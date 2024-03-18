@@ -5,7 +5,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 sh "rm -rf /var/lib/jenkins/workspace/Al-info_Modify-code/*"
-                sh "git clone https://animelaasif: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@github.com/animelaasif/Al-Info-Tech.git"
+                sh "git clone https://animelaasif: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@github.com/animelaasif/Al-Info-Tech.git"
             }
         }
         
@@ -24,7 +24,7 @@ pipeline {
                     sh "git add ."
                     sh "git commit -m 'Automated commit by Jenkins'"
                     sh "git pull"
-                    sh "git push https://animelaasif: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@github.com/animelaasif/Al-Info-Tech.git"
+                    sh "git push https://animelaasif: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@github.com/animelaasif/Al-Info-Tech.git"
                 }
             }
         }
