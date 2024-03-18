@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Clone Repository') {
+            steps {
+                sh "rm -rf /var/lib/jenkins/workspace/Al-info_Modify-code/*"
+                sh "git clone https://animelaasif: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@github.com/animelaasif/Al-Info-Tech.git"
+            }
+        }
+        
+        stage('Run image.sh') {
+            steps {
+                dir('/var/lib/jenkins/workspace/Al-info_Modify-code/Al-Info-Tech/img/') {
+                    sh 'sh image-list.sh'
+                    sh 'sh image-write.sh'
+                }
+            }
+        }
+        
+        stage('Push Changes') {
+            steps {
+                dir('/var/lib/jenkins/workspace/Al-info_Modify-code/Al-Info-Tech/img/') {
+                    sh "git add ."
+                    sh "git commit -m 'Automated commit by Jenkins'"
+                    sh "git pull"
+                    sh "git push https://animelaasif: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@github.com/animelaasif/Al-Info-Tech.git"
+                }
+            }
+        }
+    }
+}
