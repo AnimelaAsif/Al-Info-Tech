@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unique File Uploader</title>
+    <title>File Uploader</title>
+    <link rel="icon" href="logo.png" type="image/jpg">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -66,13 +67,25 @@
 </head>
 <body>
     <div class="uploader">
-        <h2>Upload Your File</h2>
+        <h2>Upload Your Files</h2>
         <form action="Uploader.php" method="post" enctype="multipart/form-data">
-            <label for="Upload">Select File</label>
-            <input type="file" name="Upload" id="Upload">
+            <label for="Upload">Select Files</label>
+            <input type="file" name="Upload" id="Upload" multiple onchange="displayFileNames()">
             <br>
-            <input type="submit" value="Upload File">
+            <input type="submit" value="Upload Files">
         </form>
+        <p id="file-names"></p> <!-- This is where the file names will be displayed -->
     </div>
+
+    <script>
+        function displayFileNames() {
+            var input = document.getElementById('Upload');
+            var fileNames = '';
+            for (var i = 0; i < input.files.length; i++) {
+                fileNames += input.files[i].name + '<br>';
+            }
+            document.getElementById('file-names').innerHTML = 'Selected files: <br>' + fileNames;
+        }
+    </script>
 </body>
 </html>
