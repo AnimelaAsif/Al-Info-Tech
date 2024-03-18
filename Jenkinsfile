@@ -1,28 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Run the scripts'){
-            steps{
-                dir('/var/lib/jenkins/workspace/Al-info/img/') {
-                    script {
-                        sh "sh image-list.sh"
-                        sh "sh image-write.sh"
-                    }
-                }
-            }
-        }
-        stage('Push Changes') {
-            steps {
-                dir('/var/lib/jenkins/workspace/Al-info/img/') {
-                    script {
-                        sh "git add ."
-                        sh "git commit -m 'Add new image'"
-                        sh "git Push(branch: 'main', credentialsId: 'My_Credentials', force: true, url: 'https://github.com/animelaasif/Al-Info-Tech.git')"
-                    }
-                }
-                
-            }
-        }
         stage('Store Running Instance IDs') {
             steps {
                 script {
