@@ -7,16 +7,18 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
+            background-image: url('logo.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
         }
         .uploader {
-            background-color: #fff;
+            background-color: rgba(182, 195, 242, 0.656);
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -65,9 +67,9 @@
 <body>
     <div class="uploader">
         <h2>Upload Your File</h2>
-        <form action="demo.php" method="post" enctype="multipart/form-data">
-            <label for="furesume">Select File</label>
-            <input type="file" name="furesume" id="furesume">
+        <form action="Uploader.php" method="post" enctype="multipart/form-data">
+            <label for="Upload">Select File</label>
+            <input type="file" name="Upload" id="Upload">
             <br>
             <input type="submit" value="Upload File">
         </form>
