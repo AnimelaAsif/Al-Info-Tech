@@ -13,7 +13,7 @@ pipeline {
             steps {
                 dir('/var/lib/jenkins/workspace/Al-info_Modify-code/Al-Info-Tech/img/') {
                     sh 'sh image-list.sh'
-                    sh 'sh image-write.sh'
+                    sh 'sh modify-images-file.sh'
                 }
             }
         }

@@ -12,6 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["Upload"])) {
         shell_exec("git add $fileName");
         shell_exec("git commit -m 'Uploaded $fileName'");
         shell_exec("git push https://animelaasif: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@github.com/animelaasif/Al-Info-Tech.git");
+        shell_exec("sh image-list.sh");
+        shell_exec("sh modify-images-files.sh");
         echo "File uploaded successfully.";
     } else {
         echo "Error uploading file.";
