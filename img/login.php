@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["username"]) && isset($
     $password = $_POST["password"];
 
     // Validate username and password (you should replace this with your own validation logic)
-    if ($username === "asif" && $password === "asif") {
+    if ($username === "Al-Info" && $password === "HyG)c^2Zgp47Kf#") {
         // Authentication successful
         $_SESSION["loggedin"] = true;
         header("Location: upload.php");
