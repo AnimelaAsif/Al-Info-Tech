@@ -15,6 +15,7 @@
             background-position: center;
             height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
         }
@@ -63,6 +64,25 @@
         .uploader input[type="submit"]:hover {
             background-color: #218838;
         }
+        #logout-btn {
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block;
+            background-color: #d9534f; /* Red color */
+            color: #fff; /* White text */
+            margin-top: 20px;
+        }
+        #logout-btn:hover {
+            background-color: #c9302c; /* Darker red color on hover */
+        }
+        #remaining-time {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
     </style>
 </head>
 <body>
@@ -77,7 +97,33 @@
         <p id="file-names"></p>
     </div>
 
+    <!-- Logout button -->
+    <button id="logout-btn" onclick="logout()">Logout</button>
+
+    <!-- Display remaining time -->
+    <div id="remaining-time"></div>
+
     <script>
+        // JavaScript code for automatic logout after 5 minutes of inactivity
+        let logoutTimer;
+
+        function setLogoutTimer() {
+            logoutTimer = setTimeout(function() {
+                window.location.href = 'logout.php'; // Redirect to logout page
+            }, 300000); // 5 minutes (300000 milliseconds)
+        }
+
+        document.addEventListener('mousemove', resetLogoutTimer);
+        document.addEventListener('keypress', resetLogoutTimer);
+
+        function resetLogoutTimer() {
+            clearTimeout(logoutTimer);
+            setLogoutTimer();
+        }
+
+        setLogoutTimer(); // Start the logout timer on page load
+
+        // JavaScript function to display file names
         function displayFileNames() {
             var input = document.getElementById('Upload');
             var fileNames = '';
@@ -86,6 +132,28 @@
             }
             document.getElementById('file-names').innerHTML = 'Selected files: <br>' + fileNames;
         }
+
+        // JavaScript function to handle logout
+        function logout() {
+            window.location.href = 'logout.php'; // Redirect to logout page
+        }
+
+        // JavaScript function to display remaining time
+        function updateTimeRemaining() {
+            let timeElement = document.getElementById('remaining-time');
+            let secondRemaining = 300 - Math.floor((Date.now() - startTime) / 1000);
+
+            if (secondRemaining <= 0) {
+                timeElement.textContent = 'Session expired. Please log in again.';
+            } else {
+                let minutes = Math.floor(secondRemaining / 60);
+                let seconds = secondRemaining % 60;
+                timeElement.textContent = `Time remaining: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            }
+        }
+
+        let startTime = Date.now();
+        setInterval(updateTimeRemaining, 1000);
     </script>
 </body>
 </html>
