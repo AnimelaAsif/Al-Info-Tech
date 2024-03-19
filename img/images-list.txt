@@ -12,7 +12,6 @@ nandyal.jpg
 office.jpg
 saturday.jpg
 singapore.jpg
-SSC.jpg
 sunday.jpg
 thursday.jpg
 tuesday.jpg
