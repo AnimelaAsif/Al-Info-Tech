@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["Upload"])) {
         echo "File uploaded successfully.";
         echo '<script>
                 setTimeout(function(){
-                    window.location.href = "alinfotechtoursandtravels/img/upload.html";
+                    window.location.href = "alinfotechtoursandtravels/img/upload.php";
                 }, 1500); // 1500 milliseconds delay before redirection
               </script>';
     } else {
