@@ -1,6 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Close overlay when close button is clicked
-    document.getElementById("closeOverlay").addEventListener("click", function() {
-        document.getElementById("overlay").style.display = "none";
+    var overlay = document.getElementById("overlay");
+    var closeButton = document.getElementById("closeOverlay");
+
+    closeButton.addEventListener("click", function() {
+        overlay.style.display = "none";
+        document.body.style.overflow = "auto";
     });
+    overlay.style.display = "flex";
+    document.body.style.overflow = "hidden";
 });
